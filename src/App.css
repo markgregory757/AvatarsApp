@@ -36,3 +36,10 @@
     transform: rotate(360deg);
   }
 }
+
+#homeBody {
+    background-color: cadetblue;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
