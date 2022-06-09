@@ -4,7 +4,7 @@ function CreateAvtr(){
     return(
         <>
         
-        <h1>CreateAvtr?</h1>
+        <h1>CreateAvatar?</h1>
         
         </>
     )
