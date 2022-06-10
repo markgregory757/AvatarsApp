@@ -6,6 +6,7 @@ function CreateAvtr(){
         
         <h1>CreateAvatar?</h1>
         
+        
         </>
     )
 }
