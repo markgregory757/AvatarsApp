@@ -8,7 +8,7 @@ import { BrowserRouter,Routes,Route } from 'react-router-dom';
 
 import Registration from './components/Registration';
 import CreateAvtr from './components/CreateAvtr';
-import AddTutorial from './components/AddTutorial';
+import Login from './components/Login';
 import Profile from './components/Profile';
 import LogOut from './components/LogOut';
 
@@ -19,11 +19,11 @@ root.render(
   <BrowserRouter>
   <Routes>
     <Route path='/' element={<App/>}>
-    <Route path='/Tutorials' element={<AddTutorial/>}></Route>
+    <Route path='/Registration' element={<Registration/>}></Route>
     <Route path='/LogOut' element={<LogOut/>}></Route>
     <Route path='/Profile' element={<Profile/>}></Route>
     <Route path='/CreateAvtr' element={<CreateAvtr/>}></Route>
-        <Route path='Registration' element={<Registration/>}>
+        <Route path='user' element={<Login/>}>
         <Route path='*' element={
           <main>
             <p>there is nothing here!</p>
