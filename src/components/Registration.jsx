@@ -20,6 +20,9 @@ const Registration = () => {
       name: user.name,
       password: user.password
     };
+    
+
+
     UserDataService.create(data)
       .then(response => {
         setUser({
