@@ -7,10 +7,11 @@ import { Link, Outlet } from 'react-router-dom';
   render (){
     return(
     <div className="App">
-    <h1>Avatar</h1>
-       <nav style={{
+      <div className="AvatarIcon"><h1 >Avatar</h1></div>
+    
+       <nav className="Navbar" style={{
          borderBottom: "solid 1px",
-         paddingBottom: '1rem'
+         paddingBottom: '1rem',
        }}>
  <Link to='/'>Home</Link> | {" "}
  <Link to='/user'>Login</Link> | {" "}

@@ -70,7 +70,7 @@ const CreateAvtr = () => {
         </div>
       ) : (
         <div>
-          <div className="form-group">
+          <div className="form-group createAvtrBlankInput">
             <label htmlFor="name">Name</label>
             <input
               type="text"
@@ -84,9 +84,9 @@ const CreateAvtr = () => {
           </div>
           <div className="form-group">
           <label htmlFor="Powertype">Power type</label>
-                <select value={avtr.powerType}
-              onChange={handleInputChange} id="powerType" name="powerType">
-                    <option value="Fire">Fire</option>
+                <select value={avtr.powerType} className="powerType"
+              onChange={handleInputChange} id="powerType"  name="powerType">
+                    <option className="Fire" value="Fire">Fire</option>
                     <option value="Water">Water</option>
                     <option value="Earth">Earth</option>
                     <option value="Air">Air</option>
