@@ -13,7 +13,7 @@ import { Link, Outlet } from 'react-router-dom';
          borderBottom: "solid 1px",
          paddingBottom: '1rem',
        }}>
- <Link to='/'>Home</Link> | {" "}
+ <Link to='/Home'>Home</Link> | {" "}
  <Link to='/user'>Login</Link> | {" "}
  <Link to='/Profile'>Profile</Link> | {" "}
  <Link to='/CreateAvtr'>CreateAvatar</Link> | {" "}

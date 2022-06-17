@@ -11,7 +11,8 @@ import CreateAvtr from './components/CreateAvtr';
 import Login from './components/Login';
 import Profile from './components/Profile';
 import LogOut from './components/LogOut';
-
+import Home from './components/Home';
+import FriendsPage from './components/friendsPage';
 const container = document.getElementById('root');
 const root = createRoot(container);
 
@@ -19,9 +20,11 @@ root.render(
   <BrowserRouter>
   <Routes>
     <Route path='/' element={<App/>}>
+    <Route path='/Home' element={<Home/>}/>
     <Route path='/Registration' element={<Registration/>}></Route>
     <Route path='/LogOut' element={<LogOut/>}></Route>
     <Route path='/Profile' element={<Profile/>}></Route>
+     <Route path='/friendsPage/:id' element={<FriendsPage/>}></Route> 
     <Route path='/CreateAvtr' element={<CreateAvtr/>}></Route>
         <Route path='user' element={<Login/>}>
         <Route path='*' element={
