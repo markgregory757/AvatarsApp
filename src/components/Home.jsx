@@ -1,8 +1,9 @@
 import { useEffect,useState } from "react";
 import userservice from "../services/userservice";
 import { Link } from "react-router-dom";
-const Home = () => {
-const [users,setUsers]=useState([])
+const Home = (props) => {
+    console.log(props)
+const [users,setUsers]=useState(null)
 useEffect(()=>{
 const data=userservice.getALLPublished()
 data.then(result=>{
