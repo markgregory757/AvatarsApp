@@ -122,7 +122,7 @@ exports.deleteAll = (req, res) => {
 };
 // Find all published Tutorials
 exports.findAllPublished = (req, res) => {
-  Avtr.find({ published: true })
+  Avtr.find({})
   .then(data => {
     res.send(data);
   })

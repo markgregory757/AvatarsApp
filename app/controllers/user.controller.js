@@ -1,8 +1,16 @@
 const db = require("../models");
 const User = db.user;
+const bcrypt=require('bcrypt')
+
+
 // Create and Save a new Tutorial
 
+
 exports.create = (req, res) => {
+const saltNum=Number(process.env.SALT)
+const salt=bcrypt.genSaltSync(saltNum)
+const hashed=bcrypt.hashSync(req.body.password,salt)
+
         // Validate request
         if (!req.body.name) {
           res.status(400).send({ message: "Content can not be empty!" });
@@ -11,7 +19,7 @@ exports.create = (req, res) => {
         // Create a Tutorial
         const user = new User({
           name: req.body.name,
-          password: req.body.password,
+          password:hashed,
           published: req.body.published ? req.body.published : false
         });
         // Save Tutorial in the database
@@ -129,3 +137,12 @@ exports.findAllPublished = (req, res) => {
     });
   });
 };
+
+
+// exports.login=(req,res)=>{
+// // const username=req.body.username
+// // const password=req.body.password
+// // console.log(username,password)
+// // User.find(username)
+// res.redirect('/api/usu')
+// }
