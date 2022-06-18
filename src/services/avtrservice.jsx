@@ -15,6 +15,9 @@ class AvtrDataService {
   delete(id) {
     return http.delete(`/avtr/${id}`);
   }
+  getALLPublished(){
+    return http.get(`/avtr/published`);
+  }
   deleteAll() {
     return http.delete(`/avtr`);
   }

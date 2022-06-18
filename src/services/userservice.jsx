@@ -4,6 +4,10 @@ class UserDataService {
     return http.get("/user");
 
   }
+  login(userInfo){
+    return http.post(`/user/login`,userInfo
+    );
+  }
   get() {
     return http.get(`/user`);
   }
