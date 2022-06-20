@@ -3,6 +3,8 @@ import React, { Component } from "react";
 import './App.css';
 import { Link, Outlet } from 'react-router-dom';
 
+
+
  export class App extends Component{
   render (){
     return(
@@ -13,12 +15,11 @@ import { Link, Outlet } from 'react-router-dom';
          borderBottom: "solid 1px",
          paddingBottom: '1rem',
        }}>
- <Link to='/Home'>Home</Link> | {" "}
- <Link to='/user'>Login</Link> | {" "}
- <Link to='/Profile'>Profile</Link> | {" "}
- <Link to='/CreateAvtr'>CreateAvatar</Link> | {" "}
- <Link to='/LogOut'>LogOut</Link> | {" "}
- <Link to='/Registration'>Registration</Link> 
+ <Link to='/AvatarsApp/Home'>Home</Link> | {" "}
+
+ <Link to='/AvatarsApp/Profile'>Profile</Link> | {" "}
+ <Link to='/AvatarsApp/CreateAvtr'>CreateAvatar</Link> | {" "}
+ <Link to='/AvatarsApp/LogOut'>LogOut</Link> | {" "}
    </nav>
    
    <Outlet /> 
