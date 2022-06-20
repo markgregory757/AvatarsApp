@@ -3,7 +3,33 @@ body {
   margin: 0;
 }
 
-
+.Login{
+  height: 600px;
+display: flex;
+justify-content: center;
+ align-items: center;
+}
+/* .LoginTitle{
+  display: flex;
+  justify-content: center;
+} */
+.LoginForm{
+  flex-direction: column;
+  align-items: center;
+  display: flex;
+   padding:50px;
+  background-color: rgba(212, 250, 61, 0.404);
+}
+.elForme>label{
+  margin: bottom 1.5em;
+}
+.elForme>input{
+border-radius:5px;
+background-color: beige;
+}
+.elForme>button{
+margin-left: 10px;
+}
 .AvatarIcon{
 font-family: Fascinate;
 }
@@ -17,8 +43,14 @@ padding-top: 15px;
   color: rgba(239, 170, 170, 0.926);
 }
 
+.Uprofile{
+  display: none;
+}
 
-.createAvtrBlankInput{
+
+
+
+            .createAvtrBlankInput{
   display: flex;
  max-width:678px ;
  flex-direction:column;

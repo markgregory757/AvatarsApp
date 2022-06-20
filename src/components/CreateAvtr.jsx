@@ -3,7 +3,8 @@ import UserDataService from "../services/userservice";
 import AvtrDataService from "../services/avtrservice";
 import { Link, Outlet } from 'react-router-dom';
 
-const CreateAvtr = () => {
+const CreateAvtr = (props) => {
+  console.log(props)
     const powerLevels = [1,2,3,4,5];
     function onPowerChange(){
         let rPL = powerLevels[Math.floor(Math.random() * powerLevels.length)];

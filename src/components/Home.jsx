@@ -1,8 +1,20 @@
-import { useEffect,useState } from "react";
+
 import userservice from "../services/userservice";
 import { Link } from "react-router-dom";
-const Home = (props) => {
-    console.log(props)
+import React, { useLocation,useContext,useEffect,useState} from "react"
+import { UserContext } from "../context/userContext";
+
+import { App } from "../App";
+// import {logUser} from "./Login"
+
+
+const Home = () => {
+// const context=useContext(UserContext)
+
+const [userDATA,setUserDATA]=useState(null)
+
+
+// if(user.user)
 const [users,setUsers]=useState(null)
 useEffect(()=>{
 const data=userservice.getALLPublished()
@@ -11,23 +23,37 @@ data.then(result=>{
     setUsers(userArr)
 })
 },[])
-console.log(users)
+
+
 
     return ( 
+
+
+        <>
+       
 <div className="Home">
+    {/* <Link to="/passing"></Link> */}
+{/* <div>{props.user.name}</div> */}
+
+    
 {users && users.map((user,i)=>{
-return <div className="HomeUser" key={i}>
+    
+return (
+
+<div className="HomeUser" key={i}>
+
     <h3>
-        <Link to={`/friendsPage/${user.id}`}>
+        <Link to={`/login/friendsPage/${user.id}`}>
         {user.name}
         </Link>
     
     </h3>
     </div>
+)
 })}
 
 </div>
-
+</>
      );
 }
  
