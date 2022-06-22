@@ -1,10 +1,14 @@
 import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useLocation } from 'react-router-dom';
 import userservice from '../services/userservice';
 
 function Profile(props){
-   console.log(props)
+
+  const location = useLocation()
+  const { from } = location.state
+   console.log("stateLoggedUser",props)
     
+    console.log("location",from);
     return(
       <div className="Profile">
 

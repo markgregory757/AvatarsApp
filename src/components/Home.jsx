@@ -27,34 +27,25 @@ data.then(result=>{
 
 
     return ( 
+        <>       
+            <div className="Home">
+                {/* <Link to="/passing"></Link> */}
+                {/* <div>{props.user.name}</div> */}
+                {users && users.map((user,i)=>{
+                    return (
+                        <div className="HomeUser" key={i}>
+                            <h3>
+                                <Link to={`/friendsPage/${user.id}`}>
+                                    {user.name}
+                                </Link>
+                            </h3>
+                        </div>
+                    )
+                })}
 
-
-        <>
-       
-<div className="Home">
-    {/* <Link to="/passing"></Link> */}
-{/* <div>{props.user.name}</div> */}
-
-    
-{users && users.map((user,i)=>{
-    
-return (
-
-<div className="HomeUser" key={i}>
-
-    <h3>
-        <Link to={`/login/friendsPage/${user.id}`}>
-        {user.name}
-        </Link>
-    
-    </h3>
-    </div>
-)
-})}
-
-</div>
-</>
-     );
+            </div>
+        </>
+    );
 }
  
 export default Home;

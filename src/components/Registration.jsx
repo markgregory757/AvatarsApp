@@ -47,7 +47,7 @@ const Registration = () => {
         <div>
           <h4>You submitted successfully!</h4>
           <button className="btn btn-success" onClick={newUser}>
-            <Link to='/user'>Login</Link>
+            <Link to='/Login'>Login</Link>
           </button>
         </div>
       ) : (

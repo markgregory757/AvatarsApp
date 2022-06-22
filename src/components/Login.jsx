@@ -13,39 +13,30 @@ import CreateAvtr from "./CreateAvtr"
 import Passing from "./passing"
 // import Passing from "./passing"
 
-export function isLoggedIn(userA){
-     var logUser=null
-     logUser=userA
-     console.log(logUser)
-     if(logUser!=null){
-     return {
-            // logUser
-      logUser
-     }
-     }
+// export function isLoggedIn(userA){
+//      var logUser=null
+//      logUser=userA
+//      console.log(logUser)
+//      if(logUser!=null){
+//      return {
+//             // logUser
+//       logUser
+//      }
+//      }
      
-}
+// }
 
  
 const Login = () => {
     
      const [loggedUser,setLoggedUser]=useState(null)
-let navigate=useNavigate()
+        let navigate=useNavigate()
 
-const formik=useFormik({
-    initialValues:{
-        username:"",
-        password:""
-    },
-
-    // validationSchema:Yup.object({
-    //     username:Yup.string()
-    //     .required("Required"),
-    //     password:Yup.string()
-    //     .max(15,"must be 15 characters or less")
-    //     .min(3,"must be less than 3 characters or more")
-    //     .required("Required")
-    // }),
+            const formik=useFormik({
+                initialValues:{
+                    username:"",
+                    password:""
+                },
     onSubmit:(values)=>{
       let userInfo={
        username:values.username,
@@ -54,14 +45,17 @@ const formik=useFormik({
      
       userservice.login(userInfo).then(response=>{
         if (response.data.user){
-       setLoggedUser(response.data)
-       isLoggedIn(response.data)
-       console.log(response.data)
-        navigate("/AvatarsApp/Home",{state:loggedUser})
+       setLoggedUser(response.data);
+    //    isLoggedIn(response.data)
+       console.log("data",response.data);
     }else{
-        navigate("/user")
+        navigate("/Login");
     }
-   
+    // if(loggedUser){
+    //     navigate("/Profile",{state:loggedUser})
+    //    }else{
+    //     console.log("loggedState Error");
+    //    }
     })
 }
 })
@@ -69,11 +63,17 @@ const formik=useFormik({
 
 
 return ( 
-<div className="Login">
+        <div className="Login">
 
-         <div className="LoginForm">
- <div className="LoginTitle"><h1 >Login</h1></div>
-           <form className="elForme" onSubmit={formik.handleSubmit}>
+            <div className="LoginForm">
+             <div className="LoginTitle"><h1 >Login</h1></div>
+             {loggedUser ? (<div>
+          <h4>You Loggin successfully!</h4>
+          <h4>loggedUser.name</h4>
+          <button className="btn btn-success">
+            <Link to='/Profile' state={{from:`Loggeduser`}}>Profile</Link>
+          </button>
+        </div>) : (<form className="elForme" onSubmit={formik.handleSubmit}>
                 <label title="username">username</label>
                 <br/>
                 <input id="username" 
@@ -108,10 +108,11 @@ return (
 
                    
                    
-            </form>
+            </form>)}
+           
             </div>
            
- </div>
+        </div>
  
 )
 }

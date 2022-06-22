@@ -17,19 +17,16 @@ const NewApp = () => {
     return ( 
         <BrowserRouter>
         <Routes>
-             <Route path='/Registration' element={<Registration/>}></Route>
-         
-         
-           
-          <Route path='/' element={<Navigate to="/user"/>}/> 
-                <Route path='/user' element={<Login/>}/>
-        
-        <Route path='/AvatarsApp' element={<App/>}> 
-    <Route path='/AvatarsApp/CreateAvtr' element={<CreateAvtr/>}></Route>
-          <Route path='/AvatarsApp/Home' element={<Home/>}/>
-            <Route exact path='/AvatarsApp/Profile' element={<Profile/>}></Route>
-               <Route path='/AvatarsApp/friendsPage/:id' element={<FriendsPage/>}></Route>
-        </Route>
+                
+                {/* <Route path='/' element={<Navigate to="/Home"/>}/>  */}
+                <Route path='/' element={<App/>}>
+                  <Route path='/login' element={<Login/>}/>
+                  <Route path='/Home' element={<Home/>}/>
+                  <Route path='/Registration' element={<Registration/>}></Route>
+                  <Route path='/CreateAvtr' element={<CreateAvtr/>}></Route>
+                  <Route path='/Profile' element={<Profile/>}></Route>
+                  <Route path='/friendsPage/:id' element={<FriendsPage/>}></Route>
+                </Route>
           <Route path='/LogOut' element={<LogOut/>}></Route>
    
           
